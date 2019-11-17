@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+</head>
+<body>
+
+    City: <p th:text="${weather.getName()}"></p>
+    Wind speed: <p th:text="${weather.getWind().getSpeed()}"></p>
+    Visibility: <p th:text="${weather.getVisibility()}"></p>
+    Clouds: <p th:text="${weather.getClouds().getAll()}"></p>
+    Humidity: <p th:text="${weather.getMain().getHumidity()}"></p>
+    Average Temp: <p th:text="${weather.getMain().getTemp()}"></p>
+    Max Temp: <p th:text="${weather.getMain().getTempMax()}"></p>
+    Min Temp: <p th:text="${weather.getMain().getTempMin()}"></p>
+    <img th:src="${weather.getIconUrl()}" alt="Ikonka">
+    <br>
+    <a th:href="@{/}">Back to main page</a>
+</body>
+</html>
